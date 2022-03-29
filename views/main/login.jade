@@ -1,0 +1,64 @@
+doctype html
+html
+	head
+		title
+			| #{title}
+		meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+		link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap' rel='stylesheet')
+		link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet' href='/adminlte/template/css/style.css')
+		link(rel='stylesheet' href='/adminlte/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/font-awesome/css/font-awesome.css')
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
+		link(rel='stylesheet' href='/adminlte/dist/css/AdminLTE.min.css')
+		link(rel='stylesheet' href='/adminlte/plugins/iCheck/square/blue.css')
+	body
+	section.ftco-section
+		.container
+			.row.justify-content-center
+				.col-md-7.col-lg-5
+					.wrap
+						.img(style='background-image: url(/adminlte/template/images/bg-1.jpg);')
+						.login-wrap.p-2.p-md-5
+							.d-flex
+								.w-50
+									h3 Sign In
+							form.signin-form(action='/login/' method='post')
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h5
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if  (messages.msg_info)
+									.alert.alert-success.alert-dismissable
+										button.close(type='button' data-dismiss='alert' aria-hidden='true')
+											| ×
+										h5
+											i.icon.fa.fa-check
+											| Success!
+										| !{messages.msg_info}
+								.form-group.mt-3
+									input.form-control(type="email" placeholder="Email" value="rafda@gmail.com" name="txtEmail")
+									label.form-control-placeholder(for='username') Username
+								.form-group
+									input#password-field.form-control(type="password" placeholder="Password" value="12345" name="txtPassword")
+									label.form-control-placeholder(for='password') Password
+									span.fa.fa-fw.fa-eye.field-icon.toggle-password(toggle='#password-field')
+								.form-group
+									button.form-control.btn.btn-primary.rounded.submit.px-3(type='submit') Sign In
+								.form-group.d-md-flex
+										a(href='#') Forgot Password
+							p.text-center
+								| Not a member? 
+								a(href='/register') Sign Up
+
+
+script(type='text/javascript' src='/adminlte/plugins/jQuery/jquery-2.2.3.min.js')
+script(type='text/javascript' src='/adminlte/bootstrap/js/bootstrap.min.js')
+script(type='text/javascript' src='/adminlte/plugins/iCheck/icheck.min.js')
+script(type='text/javascript' src='/adminlte/dist/js/login.js')
+script(type='text/javascript' src='/adminlte/template/js/popper.js')
+script(type='text/javascript' src='/adminlte/template/js/main.js')

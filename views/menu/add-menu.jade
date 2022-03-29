@@ -1,0 +1,70 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Rumah Makan
+			small silakan masukkan data makanan dan minuman
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Level 
+			li.active Here 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| Makanan dan Minuman
+				.box-tools.pull-right
+					button(type='button' data-widget='collapse' data-toggle='tooltip' title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+
+			.box-body
+				form(role='form' method='post' action='/menus/add' enctype='multipart/form-data')
+					.row
+
+						.col-xs-6
+							.box-body
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button' data-dismiss='alert' aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								.form-group
+									label
+										| Menu
+									input(type='text' name='menu' placeholder='Enter Menu', autofocus).form-control
+								.form-group
+									label
+										| Kategori
+									select(type="text" name="kategori" placeholder="Masukan Kategori", required).form-control
+										option(value="") Masukkan Kategori
+										option(value="Paket") Paket
+										option(value="Sup") Sup
+										option(value="Seafood") Seafood
+										option(value="Sayur") Sayur
+										option(value="Minuman") Minuman
+										option(value="Snack") Snack
+								.form-group
+									label
+										| Harga
+									input(type='text' name='harga' placeholder='Enter Harga').form-control
+								.form-group
+									label
+										| Stok
+									select(type="text" name="stok" placeholder="Masukan Stok", required).form-control
+										option(value="") Masukkan Stok
+										option(value="Tersedia") Tersedia
+										option(value="Kosong") Kosong
+								.form-group
+									label
+										| Gambar
+									input(type='file' name='gambar')
+							.box-footer
+								button(type='submit').btn.btn-primary
+									| Submit
+								a(href='/menus').btn.btn-primary.pull-right
+									| Back

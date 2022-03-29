@@ -1,0 +1,34 @@
+header.main-header
+	a(href='/').logo
+		span.logo-mini
+			<b>Re</b> St
+		span.logo-lg
+			<b>Delicious</b>Restaurant
+	nav(role='navigation').navbar.navbar-static-top
+		a(href='#', role='button', data-toggle='offcanvas').sidebar-toggle
+			span.sr-only Toggle Navigation
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+		div.navbar-custom-menu
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a(href='#',data-toggle='dropdown').dropdown-toggle
+						img(src='/adminlte/dist/img/profile.jpg',alt='User Image').user-image
+						span.hidden-xs
+							| .
+					ul.dropdown-menu
+						li.user-header
+							img(src='/adminlte/dist/img/profile.jpg',alt='User Image').img-circle
+							p
+								| Rafda Hasna Imamah
+								small
+									| Member since Nov. 2012
+
+						li.user-footer
+							.pull-left
+								a(href='#').btn.btn-default.btn-flat
+									| Profile
+							.pull-right
+								a(href='/logout').btn.btn-default.btn-flat
+									| Sign out
